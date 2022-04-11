@@ -1,0 +1,38 @@
+{{ define "inicio"}} <!-- Define la seccion o template -->
+
+{{ template "cabecera"}} <!-- Se llama a la cabecera-->
+
+    <a name="" id="" class="btn btn-primary" href="/crear" role="button">Agregar empleado</a>    
+
+    <br>
+    <br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range.}} <!-- se recorren los datos (notar el punto y la notacion para acceder a los atributos o campos de la estructura empleado) -->
+                <tr>
+                    <td scope="row">{{.Id}}</td>
+                    <td>{{.Nombre}}</td>
+                    <td>{{.Correo}}</td>
+                    <td>{{.Celular}}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-warning" href="/editar?id={{.Id}}" role="button">Editar</a>
+                        |
+                        <a name="" id="" class="btn btn-danger" href="/borrar?id={{.Id}}" role="button">Borrar</a>
+                    </td>
+                </tr>
+            {{end}}
+        </tbody>
+    </table>
+
+{{ template "pie"}} <!-- Se llama al pie-->
+{{end}}

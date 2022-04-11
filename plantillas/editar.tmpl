@@ -1,0 +1,44 @@
+{{ define "editar"}}
+{{template "cabecera"}}
+<div class="card">
+
+    <div class="card-header">
+        Empleados
+    </div>
+
+    <div class="card-body">
+        <form action="/actualizar" method="post">
+
+    
+            <input type="hidden" value={{.Id}} class="form-control" name="id" id="id" placeholder="">
+
+
+            <div class="form-group">
+                <label for="" class="form-label">Nombre:</label>
+                <input type="text" name="nombre" value={{.Nombre}} id="nombre" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Escribe tu nombre</small>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="form-label">Correo:</label>
+                <input type="email" name="correo"  value={{.Correo}} id="correo" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+                <label for="" class="form-label">Celular:</label>
+                <input type="number" name="celular"  value={{.Celular}} id="celular" class="form-control" placeholder="" aria-describedby="helpId">
+                <small id="helpId" class="text-muted">Escribe tu celular</small>
+            </div>
+
+            <button type="submit" class="btn btn-success">Modificar nuevo empleado</button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+
+        </form>
+    </div>
+
+</div>
+
+</div>
+{{template "pie"}}
+{{end}}
